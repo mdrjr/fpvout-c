@@ -63,7 +63,7 @@ int main(int _argc, char** argv)
 	// Send magic
 	unsigned char MAGIC[] = { 0x52, 0x4d, 0x56, 0x54 };
 	int MAGIC_LENGTH = 4;
-	unsigned int MAGIC_TIMEOUT_MS = 500;
+	unsigned int MAGIC_TIMEOUT_MS = 1000;
 	r = libusb_bulk_transfer(dev, USB_ENDPOINT_CONTROL_OUT, MAGIC, MAGIC_LENGTH, NULL, MAGIC_TIMEOUT_MS);
 	if (r != 0 && r != LIBUSB_ERROR_TIMEOUT) {
 		fprintf(stderr, "unable to send magic: %s\n", libusb_strerror(r));
